@@ -1,0 +1,26 @@
+{
+  "name": "easy-plast-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "wrangler d1 migrations apply easy-plast --remote"
+  },
+  "dependencies": {
+    "jose": "6.2.13",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "wrangler": "4.92.0",
+    "typescript": "5.9.3",
+    "@cloudflare/workers-types": "4.20260515.1",
+    "@types/node": "22.19.19"
+  }
+}
