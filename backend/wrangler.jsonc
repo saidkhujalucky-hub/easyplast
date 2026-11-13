@@ -1,0 +1,19 @@
+{
+  "name": "easy-plast-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-29",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "API_ALLOWED_ORIGINS": "https://saidkhujalucky-hub.github.io"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "easy-plast",
+      "database_id": "00000000-0000-4000-8000-000000000000",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}
