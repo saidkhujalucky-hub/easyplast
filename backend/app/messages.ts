@@ -627,9 +627,9 @@ const entries:readonly (readonly [string,string,string])[]=[
     "Our manager will help confirm the details."
   ],
   [
-    "Минимальный заказ — 20 кг",
-    "Minimal buyurtma — 20 kg",
-    "Minimum order — 20 kg"
+    "Минимальный заказ — 50 кг",
+    "Minimal buyurtma — 50 kg",
+    "Minimum order — 50 kg"
   ],
   [
     "Мои заявки",

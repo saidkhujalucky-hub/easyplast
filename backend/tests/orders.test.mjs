@@ -50,19 +50,19 @@ test('Google login and logout reject cross-origin requests',async()=>{
 });
 test('logout revokes the session on the server',async()=>{as(bob);const r=await logout(new Request(`${origin}/api/auth/logout`,{method:'POST',headers:{Origin:origin,Cookie:`__Host-ep_session=${bob}`}}));assert.equal(r.status,200);assert.match(r.headers.get('set-cookie'),/Max-Age=0/);assert.equal((await GET()).status,401);});
 
-test('server enforces the 20 kg total minimum, including mixed orders',async()=>{
-  as(alice);const input=order();input.items[0].quantity=19;
+test('server enforces the 50 kg total minimum, including mixed orders',async()=>{
+  as(alice);const input=order();input.items[0].quantity=49;
   assert.equal((await POST(request(input))).status,400);
-  input.items[0].quantity=20;assert.equal((await POST(request(input))).status,201);
-  const mixed=order();mixed.items[0].quantity=10;mixed.items.push({...mixed.items[0],id:randomUUID(),category:'carpets',name:'Для ковров'});
+  input.items[0].quantity=50;assert.equal((await POST(request(input))).status,201);
+  const mixed=order();mixed.items[0].quantity=25;mixed.items.push({...mixed.items[0],id:randomUUID(),category:'carpets',name:'Для ковров'});
   assert.equal((await POST(request(mixed))).status,201);
 });
 test('server prices all categories using the tariff, ignoring a supplied price',async()=>{
   as(alice);
   for(const [category,rate] of Object.entries({water:26000,cookies:26000,broccoli:29000,carpets:25000,tshirt:26000,trash:26000,custom:26000})){
-    const input=order();Object.assign(input.items[0],{category,quantity:20,unitPrice:1,lineTotal:1,purpose:category==='custom'?'Для упаковки одежды':''});
+    const input=order();Object.assign(input.items[0],{category,quantity:50,unitPrice:1,lineTotal:1,purpose:category==='custom'?'Для упаковки одежды':''});
     const response=await POST(request(input));assert.equal(response.status,201);const saved=(await response.json()).order.items[0];
-    assert.equal(saved.unitPrice,rate,category);assert.equal(saved.lineTotal,rate*20,category);
+    assert.equal(saved.unitPrice,rate,category);assert.equal(saved.lineTotal,rate*50,category);
     if(category==='custom')assert.equal(saved.purpose,'Для упаковки одежды');
   }
 });
@@ -73,8 +73,8 @@ test('custom packaging requires an intended use and keeps it after loading',asyn
   const list=(await (await GET()).json()).orders;const loaded=list.find(o=>o.id===saved.id);assert.equal(loaded.items[0].purpose,'Для хлеба');assert.equal(loaded.items[0].lineTotal,2600000);
 });
 test('minimum-order errors are returned in the selected language',async()=>{
-  as(alice);const input=order();input.items[0].quantity=19;
-  for(const [lang,expected] of Object.entries({en:'Minimum order — 20 kg',uz:'Minimal buyurtma — 20 kg'})){
+  as(alice);const input=order();input.items[0].quantity=49;
+  for(const [lang,expected] of Object.entries({en:'Minimum order — 50 kg',uz:'Minimal buyurtma — 50 kg'})){
     const req=new Request(`${origin}/api/orders`,{method:'POST',headers:{'Content-Type':'application/json','Origin':origin,'Cookie':cookieHeader(),'X-EasyPlast-Language':lang},body:JSON.stringify(input)});
     const res=await POST(req);assert.equal(res.status,400);assert.equal((await res.json()).error,expected);
   }
@@ -91,12 +91,12 @@ test('Telegram messages include intended use, correct prices and the selected la
 test('carpet orders save width and 5 micron thickness without a length',async()=>{
   as(alice);
   const input=order();
-  Object.assign(input.items[0],{category:'carpets',name:'Для ковров',width:50,thickness:5,quantity:20});
+  Object.assign(input.items[0],{category:'carpets',name:'Для ковров',width:50,thickness:5,quantity:50});
   delete input.items[0].length;
   const response=await POST(request(input));assert.equal(response.status,201);
   const saved=(await response.json()).order;
   assert.equal(saved.items[0].width,50);assert.equal(saved.items[0].thickness,5);
-  assert.equal(saved.items[0].lineTotal,500000);assert.equal('length' in saved.items[0],false);
+  assert.equal(saved.items[0].lineTotal,1250000);assert.equal('length' in saved.items[0],false);
   const loaded=(await (await GET()).json()).orders.find(o=>o.id===saved.id);
   assert.equal('length' in loaded.items[0],false);
   const {orderText}=await import('../app/catalog.ts');

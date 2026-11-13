@@ -31,7 +31,7 @@ export const colorsForProduct = (key: ProductKey) =>
 export type CartItem = { id: string; category: ProductKey; name: string; width: number; length?: number; thickness: number; color: string; colorName: string; quantity: number; purpose?: string; unitPrice?: number; lineTotal?: number };
 export type Delivery = { name: string; phone: string; method: "delivery" | "pickup"; city: string; address: string; latitude: number | null; longitude: number | null; comment: string; requestedDate: string };
 export type SavedOrder = { id: string; number: string; createdAt: number; status: string; items: CartItem[]; delivery: Delivery };
-export const MIN_ORDER_KG = 20;
+export const MIN_ORDER_KG = 50;
 export const RECOMMENDED_THICKNESS = 5;
 export const TRANSPARENT_COLOR = "#ADCED5";
 export function formatItemDimensions(item:Pick<CartItem,"category"|"width"|"length">,lang:Language="ru") {

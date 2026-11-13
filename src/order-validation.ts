@@ -25,6 +25,6 @@ export const deliverySchema = z.object({
   if (d.requestedDate && (Number.isNaN(Date.parse(d.requestedDate)) || d.requestedDate < new Date(Date.now()+5*60*60*1000).toISOString().slice(0,10))) c.addIssue({code:"custom",path:["requestedDate"],message:"Выберите сегодняшнюю или будущую дату"});
 });
 export const orderSchema = z.object({requestKey: z.string().uuid(), items:z.array(itemSchema).min(1).max(30), delivery:deliverySchema}).superRefine((order,ctx)=>{
-  if(order.items.reduce((sum,item)=>sum+item.quantity,0)<20) ctx.addIssue({code:"custom",path:["items"],message:"Минимальный заказ — 20 кг"});
+  if(order.items.reduce((sum,item)=>sum+item.quantity,0)<50) ctx.addIssue({code:"custom",path:["items"],message:"Минимальный заказ — 50 кг"});
   order.items.forEach((item,index)=>{if(item.category==="custom" && item.purpose.length<3)ctx.addIssue({code:"custom",path:["items",index,"purpose"],message:"Укажите, для чего нужна упаковка"});});
 });

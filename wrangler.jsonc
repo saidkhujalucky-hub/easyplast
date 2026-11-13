@@ -1,6 +1,6 @@
 
 {
-  "name": "easyplast5",
+  "name": "easyplast",
   "compatibility_date": "2026-10-29",
   "main": "./worker/index.js",
   "ai": { "binding": "AI" },
