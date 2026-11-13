@@ -18,3 +18,5 @@ html[data-theme=dark] .ep-theme-switch{color:#c6d8f7} html[data-theme=dark] .ep-
 html[data-theme=dark] .mp-product-spec,html[data-theme=dark] .mp-section-heading>p,html[data-theme=dark] .mp-hero-proof,html[data-theme=dark] .mp-visual-note{color:#b1c4df}
 html[data-theme=dark] .mp-mini-photo{background:#e6edf7;border-color:#e6edf7} html[data-theme=dark] .mp-mini-photo>span:last-child{color:#243a5a}
 html[data-theme=dark] .mp-faq-list details,html[data-theme=dark] .mp-benefits,html[data-theme=dark] .mp-benefits>div{border-color:#34465e}
+
+.ep-chat-body{display:flex;flex-direction:column;gap:10px;max-height:300px}.ep-chat-body p+p{margin:0}.ep-chat-body p{padding:10px 12px;border-radius:12px;max-width:90%;overflow-wrap:anywhere}.ep-chat-assistant{background:#edf3fc;align-self:flex-start}.ep-chat-body .ep-chat-user{background:#215ce5;color:#fff;align-self:flex-end}.ep-chat-thinking{color:#667a96;font-style:italic}html[data-theme=dark] .ep-chat-body .ep-chat-assistant{background:#263c59;color:#edf3ff}html[data-theme=dark] .ep-chat-body .ep-chat-user{background:#426de3;color:#fff}
