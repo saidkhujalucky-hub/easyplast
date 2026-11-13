@@ -1,0 +1,58 @@
+{
+  "water": {
+    "file": "public/images/products/water.webp",
+    "image_url": "https://content1.rozetka.com.ua/goods/images/big/505781142.jpg",
+    "source_url": "https://bt.rozetka.com.ua/ua/473246114/p473246114/",
+    "subject": "Real 19-litre water cooler jug inside clear protective poly bag; excellent exact match; blue jug provides blue appearance.",
+    "verified_visually": true,
+    "attribution": "ROZETKA / LimeS&S product image; license not stated"
+  },
+  "cookies": {
+    "file": "public/images/products/cookies.webp",
+    "image_url": "https://marmel.shop/content/images/18/716x600l80mc0/tsukrove-pechyvo-z-aromatom-priazhenoho-moloka-58-kh-44235333345712.jpg",
+    "source_url": "https://marmel.shop/tsukrove-pechyvo-z-aromatom-priazhenoho-moloka-58-kh/",
+    "subject": "Open cardboard cookie box with clear/white poly liner folded over inner top rim; exact functional match; source dimensions arrows in outer margins. CSS cropping can hide margins.",
+    "verified_visually": true,
+    "attribution": "MarmelShop product image; license not stated"
+  },
+  "broccoli": {
+    "file": "public/images/products/broccoli.webp",
+    "image_url": "https://www.maropack.de/fileadmin/_processed_/0/2/csm_heissgenadelte-beutel-01_f37784a6ea.jpg",
+    "source_url": "https://www.maropack.de/en/bags/hot-needle-perforated-bags/",
+    "subject": "Real transparent plastic film/bag close-up, pale blue appearance against blue background, MANY visible small holes. Exact color/texture/perforation but bag is cropped close-up and no broccoli inside. Best exact detail image.",
+    "verified_visually": true,
+    "attribution": "Maropack product photograph; license not stated"
+  },
+  "carpets": {
+    "file": "public/images/products/carpets.webp",
+    "image_url": "https://media.adeo.com/media/4992095/media.png?fit=bounds&format=jpg&height=1400&quality=80&width=1400",
+    "source_url": "https://www.leroymerlin.es/productos/funda-de-alfombra-en-polietileno-de-3000-cm-x-34-m-19821032.html",
+    "subject": "Unbranded rolled carpet in transparent polyethylene protective sleeve, white background. Excellent exact match.",
+    "verified_visually": true,
+    "attribution": "Leroy Merlin / ADEO product image; license not stated"
+  },
+  "tshirt": {
+    "file": "public/images/products/tshirt.webp",
+    "image_url": "https://avrora-mag.ru/images/virtuemart/product/00-00000837_1.png",
+    "source_url": "https://avrora-mag.ru/odnorazovaya-posuda-i-fasovka/fasovka/2650-Paket-majka-belaya-bez-risunka-30-55-16-mk-100sht-v-up-belaya-detail.html",
+    "subject": "Plain unprinted white T-shirt handle polyethylene bag, white background. Exact match. PNG original.",
+    "verified_visually": true,
+    "attribution": "Avrora product image; license not stated"
+  },
+  "trash": {
+    "file": "public/images/products/trash-bag.webp",
+    "image_url": "https://www.tonerdepot.ro/thumbs/1200x1200-normal-80/23913524-1/69880.jpg",
+    "source_url": "https://www.tonerdepot.ro/bunuri/130384/sac-de-gunoi-ldpe-negru-100-x-125-cm-240l-10-buc",
+    "subject": "One large black garbage bag, tied at top, standing upright; no roll or additional bags.",
+    "verified_visually": true,
+    "attribution": "TonerDepot / WIMEX product image; license not stated"
+  },
+  "custom": {
+    "file": "public/images/products/custom.webp",
+    "image_url": "https://cdn.shopify.com/s/files/1/2140/6025/products/21byCioy2bL.jpg?v=1632855947",
+    "source_url": "https://www.aegis-labels.com/products/spartan-industrial-12-x-15-1000-count-1-1-mil-flat-open-end-clear-plastic-poly-bags-for-proofing-bread-dough-packaging-clothes-shirts-thin-lightweight-bags-do-not-have-seal",
+    "subject": "Plain empty flat clear polyethylene bag. Exact generic custom-package reference.",
+    "verified_visually": true,
+    "attribution": "Aegis Adhesives / Spartan Industrial product image; license not stated"
+  }
+}
