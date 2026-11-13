@@ -20,3 +20,5 @@ html[data-theme=dark] .mp-mini-photo{background:#e6edf7;border-color:#e6edf7} ht
 html[data-theme=dark] .mp-faq-list details,html[data-theme=dark] .mp-benefits,html[data-theme=dark] .mp-benefits>div{border-color:#34465e}
 
 .ep-chat-body{display:flex;flex-direction:column;gap:10px;max-height:300px}.ep-chat-body p+p{margin:0}.ep-chat-body p{padding:10px 12px;border-radius:12px;max-width:90%;overflow-wrap:anywhere}.ep-chat-assistant{background:#edf3fc;align-self:flex-start}.ep-chat-body .ep-chat-user{background:#215ce5;color:#fff;align-self:flex-end}.ep-chat-thinking{color:#667a96;font-style:italic}html[data-theme=dark] .ep-chat-body .ep-chat-assistant{background:#263c59;color:#edf3ff}html[data-theme=dark] .ep-chat-body .ep-chat-user{background:#426de3;color:#fff}
+
+.map-actions .geo-locate{min-height:52px;padding:14px 20px;font-size:14px;gap:10px;border-radius:7px;font-weight:600}.map-actions .geo-locate svg{width:20px;height:20px;flex-shrink:0}@media(max-width:640px){.map-actions .geo-locate{width:100%;justify-content:center;font-size:14px}}
