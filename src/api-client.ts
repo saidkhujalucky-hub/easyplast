@@ -23,6 +23,10 @@ export function rememberApiSession(token:string,expiresAt:number) {
   sessionStorage.setItem(SESSION_KEY,JSON.stringify({token,expiresAt}));
 }
 export function clearApiSession() {try{sessionStorage.removeItem(SESSION_KEY);}catch{}}
+export function guestOrderFetch(options:RequestInit) {
+  const base=window.location.origin==="https://saidkhujalucky-hub.github.io"?"https://easyplast.saidkhujalucky.workers.dev":"";
+  return fetch(base+"/api/guest-orders",{...options,credentials:"omit",cache:"no-store"});
+}
 export async function apiFetch(path:string,options:RequestInit={}) {
   if(!/^\/api\//.test(path))throw new Error("Invalid API path");
   if(!window.EASY_PLAST_API_BASE){return Response.json(path==="/api/auth/config"?{configured:false}:{error:"Подключите сервер для сохранения заявок."},{status:path==="/api/auth/config"?200:503});}

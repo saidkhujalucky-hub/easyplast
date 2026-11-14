@@ -1,6 +1,13 @@
 export type Language="ru"|"uz"|"en";
 export function isLanguage(value:unknown):value is Language{return value==="ru"||value==="uz"||value==="en";}
 const entries:readonly (readonly [string,string,string])[]=[
+  ["Отправить заявку","So‘rovni yuborish","Submit request"],
+  ["Номер заявки","So‘rov raqami","Request number"],
+  ["Контактный телефон","Aloqa telefoni","Contact phone"],
+  ["В каталог","Katalogga qaytish","Back to catalog"],
+  ["Менеджер свяжется с вами, чтобы согласовать детали заказа.","Menejer buyurtma tafsilotlarini kelishish uchun siz bilan bog‘lanadi.","Our manager will contact you to confirm the order details."],
+  ["Заявка поступит менеджеру сразу после отправки. Можно оформить без входа.","So‘rovingiz yuborilishi bilan menejerga yetib boradi. Hisobga kirish shart emas.","Your request goes directly to our manager. You can order without signing in."],
+  ["Предыдущая версия заявки уже принята. Чтобы отправить изменённую заявку отдельно, нажмите кнопку ещё раз.","So‘rovning oldingi varianti qabul qilingan. O‘zgartirilgan so‘rovni alohida yuborish uchun tugmani yana bosing.","The previous request was received. To send the edited request separately, press the button again."],
   [
     "+998 · Консультация и заявки",
     "+998 · Maslahat va buyurtmalar",

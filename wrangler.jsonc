@@ -4,10 +4,13 @@
   "compatibility_date": "2026-10-29",
   "main": "./worker/index.js",
   "ai": { "binding": "AI" },
+  "d1_databases": [
+    { "binding": "SITE_DB", "database_name": "easy-plast-db", "database_id": "30b17c1d-eccd-4708-bfc8-765e2083b82c", "migrations_dir": "./worker/migrations" }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/assistant"]
+    "run_worker_first": ["/api/assistant", "/api/guest-orders"]
   }
 }
